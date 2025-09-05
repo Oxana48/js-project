@@ -1,0 +1,8 @@
+*.log
+*.tmp
+
+# Игнорируем папку node_modules (на будущее, если добавится JS-сборка)
+node_modules/
+
+.vscode/
+.idea/
