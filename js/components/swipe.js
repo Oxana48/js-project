@@ -1,7 +1,34 @@
 export function swipeInitiallization() {
+  if (!document.querySelector('.swiper')) {
+    console.error('Swiper container not found!');
+    return null;
+  }
   const swiper = new Swiper(".swiper", {
-    slidesPerView: 4,
-    spaceBetween: 20,
+    slidesPerView: 1,
+    spaceBetween: 10,
+
+    breakpoints: {
+      320: {
+        slidesPerView: 1,
+        spaceBetween: 10
+      },
+      576: {
+        slidesPerView: 2,
+        spaceBetween: 15
+      },
+      768: {
+        slidesPerView: 3,
+        spaceBetween: 15
+      },
+      1024: {
+        slidesPerView: 4,
+        spaceBetween: 20
+      },
+      1200: {
+        slidesPerView: 4,
+        spaceBetween: 20
+      }
+    },
 
     navigation: {
       nextEl: ".day-products__navigation-btn--next",
@@ -13,5 +40,6 @@ export function swipeInitiallization() {
       type: "numbers",
     },
   });
+  console.log('Swiper initialized successfully');
   return swiper;
 }
