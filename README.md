@@ -40,7 +40,7 @@
 
 1. Клонируйте репозиторий:
 ```bash
-git clone https://github.com/ваш-логин/название-репозитория.git
+git clone https://github.com/Oxana48/js-project
 ```
 
 2. Перейдите в папку проекта и откройте файл `index.html` в браузере.
