@@ -39,6 +39,11 @@ export function updateBasket() {
   const basketList = document.querySelector(".basket__list");
   const basketSubmit = document.querySelector(".basket__link");
 
+  if (!basketEl || !basketCount || !basketList || !basketSubmit) {
+    console.warn("Элементы корзины не найдены");
+    return;
+  }
+
   if (basketList.children.length === 0) {
     basketSubmit.style.display = "none";
     basketEl.style.display = "block";

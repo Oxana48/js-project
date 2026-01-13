@@ -59,14 +59,12 @@ export function validation() {
 
         if (response.ok) {
           showError("Благодарим за обращение!");
-          console.log("Уррра!");
           form.reset();
         } else {
           throw new Error("Не удалось отправить сообщение!");
         }
       } catch (error) {
         showError("Не удалось отправить обращение");
-        console.log("Бл*");
       }
     });
 }

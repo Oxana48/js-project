@@ -1,5 +1,11 @@
 import { addToBasket } from "./basketFunctions.js";
 
+function escapeHtml(text) {
+  const div = document.createElement("div");
+  div.textContent = text;
+  return div.innerHTML;
+}
+
 export default class Card {
   constructor({ id, name, price, image, availability }) {
     this._id = id;
@@ -19,7 +25,7 @@ export default class Card {
                 <div class="product-card__visual">
                     <img class="product-card__img" src="${
                       this._image
-                    }" height="436" width="290" alt="${this._name}">
+                    }" height="436" width="290" alt="${escapeHtml(this._name)}">
                     <div class="product-card__more">
                         <a href="#" class="product-card__link btn btn--icon" data-id="${
                           this._id
@@ -35,7 +41,7 @@ export default class Card {
                     </div>
                 </div>
                 <div class="product-card__info">
-                    <h2 class="product-card__title">${this._name}</h2>
+                    <h2 class="product-card__title">${escapeHtml(this._name)}</h2>
                     <span class="product-card__old">
                         <span class="product-card__old-number">${this._priceOld.toLocaleString()}</span>
                         <span class="product-card__old-add">₽</span>

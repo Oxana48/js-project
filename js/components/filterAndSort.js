@@ -1,5 +1,5 @@
-import {getData} from "./getData.js";
-import { renderCards, displayPagination} from "./pagination.js";
+import { getData } from "./getData.js";
+import { renderCards, displayPagination } from "./pagination.js";
 import { currentPage, lampsPerView } from "./pagination.js";
 
 export async function updateLampTypes() {
@@ -26,12 +26,23 @@ export let filteredLamps = [];
 
 export async function filterAndSortLamps() {
   const lamps = await getData();
+
+  if (!lamps || lamps.length === 0) {
+    console.warn("Данные не загружены");
+    return;
+  }
+
   const checkboxes = document.querySelectorAll(
     ".custom-checkbox__field:checked"
   );
   const checkedTypes = Array.from(checkboxes).map((checkbox) => checkbox.value);
   const radioInstock = document.getElementById("instock");
   const selectEl = document.querySelector(".catalog__sort-select");
+
+  if (!selectEl) {
+    console.warn("Элемент сортировки не найден");
+    return;
+  }
 
   let filteredLamps = lamps.filter((lamp) => {
     return (
