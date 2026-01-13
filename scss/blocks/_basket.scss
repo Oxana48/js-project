@@ -34,7 +34,7 @@
   }
 
   &__item {
-    display: none;
+    display: grid;
     gap: 20px;
     grid-template-columns: 60px 170px 76px 20px;
     align-items: center;
