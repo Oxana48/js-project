@@ -1217,7 +1217,6 @@ button {
   max-width: 1320px;
   margin: 0 auto;
   padding: 0 20px;
-  overflow: hidden;
 }
 
 .visually-hidden {
@@ -1349,7 +1348,7 @@ button {
   padding: 0;
 }
 .basket__item {
-  display: none;
+  display: grid;
   gap: 20px;
   grid-template-columns: 60px 170px 76px 20px;
   align-items: center;
